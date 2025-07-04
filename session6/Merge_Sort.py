@@ -28,4 +28,5 @@ def merge(lhs, rhs):
 
 
 arr = [12, 65, 98, 62, 88, 1]
+arr.sort()
 print(mergesort(arr))
