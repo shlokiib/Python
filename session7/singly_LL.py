@@ -60,6 +60,19 @@ class LinkedList:
 
         return temp
 
+    def reverse_ll(self):
+        prev = None
+        curr = self.head
+        temp = self.head.next
+        if self.head == None:
+            return self.head
+        while (temp != None):
+            curr.next =prev
+            prev = prev.next
+             
+            curr = temp
+            temp = temp.next 
+        
     def display(self):
         temp = self.head
         while temp:
@@ -92,3 +105,7 @@ print("Middle of list:")
 mid = ll.mid_of_list()
 
 print(f"Middle node data:  {mid.data}")
+
+rev = ll.reverse_ll()
+print("reversed list")
+ll.display()
