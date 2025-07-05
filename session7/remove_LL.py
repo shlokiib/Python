@@ -95,16 +95,16 @@ class LinkedList:
         
     def remove_first(self, value):
         if not self.head:
-            return      # list is empty 
+            return       
 
         
         if self.head.data == value:
-            self.head = self.head.next # if first element is value, change head 
+            self.head = self.head.next 
             if self.head is None:              
                 self.tail = None
             return
 
-        # find first match
+        
         prev  = self.head
         curr = self.head.next
         while curr and curr.data != value:
