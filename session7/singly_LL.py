@@ -60,19 +60,23 @@ class LinkedList:
 
         return temp
 
-    def reverse_ll(self):
-        prev = None
-        curr = self.head
-        temp = self.head.next
-        if self.head == None:
-            return self.head
-        while (temp != None):
-            curr.next =prev
-            prev = prev.next
-             
-            curr = temp
-            temp = temp.next 
-        
+    
+    
+    def rotate__at(self,index):
+        temp = self.head
+        count = 0 
+        while temp.next != self.tail:
+            temp = temp.next
+        tailtemp = temp.next
+        temp = self.head
+        while count != index-1:
+            count +=1
+            temp = temp.next
+       
+        self.head = temp.next
+        self.tail = tailtemp
+        return 
+               
     def display(self):
         temp = self.head
         while temp:
@@ -91,21 +95,8 @@ print("Inserting at end:")
 for i in range(1,6):
     ll.insert_at_end(i)
     
-ll.display()
+ll.display
 
-print("Inserting at start:")
-ll.insert_at_start(0)
-ll.display()
 
-ll.insert_at_index(99, 3)
-print("Inserting 99 at index 3:")
-ll.display()
-
-print("Middle of list:")
-mid = ll.mid_of_list()
-
-print(f"Middle node data:  {mid.data}")
-
-rev = ll.reverse_ll()
-print("reversed list")
+ll.rotate__at(2)
 ll.display()
