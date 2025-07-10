@@ -24,6 +24,11 @@ class BinaryTree:
             self.postorder(node.left)
             self.postorder(node.right)
             print(node.data, end=' ')
+   
+    def count_nodes(self, node):
+        if node is None:
+            return 0
+        return 1 + self.count_nodes(node.left) + self.count_nodes(node.right)
 
 tree = BinaryTree()
 values = [10, 5, 15, 3, 7, 18]  
@@ -32,3 +37,5 @@ for val in values:
 
 print("Post-order Traversal:")
 tree.postorder(tree.root)
+print()
+print("Number of nodes:", tree.count_nodes(tree.root))
